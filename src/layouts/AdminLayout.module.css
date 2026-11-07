@@ -1,0 +1,77 @@
+.accountSlot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+}
+
+.fallbackAccount {
+  position: fixed;
+  inset-inline-end: 16px;
+  inset-block-end: 16px;
+  z-index: 100;
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.layoutShell:has(.accountSlot) .fallbackAccount,
+.layoutShell :global(.justadmin-pro-setting-drawer-handle) {
+  display: none;
+}
+
+.layoutFooter {
+  padding: 16px;
+  text-align: center;
+}
+
+.accountName {
+  max-inline-size: 76px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .accountName {
+    display: none;
+  }
+}
+
+.fixedContent {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1152px;
+  margin-inline: auto;
+}
+
+.hideFixedHeader li:has(:global(.fixed-header)) {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .hideDesktopFixedHeader li:has(:global(.fixed-header)) {
+    display: none;
+  }
+}
+
+.breadcrumb {
+  margin-block-end: 12px;
+  overflow-wrap: anywhere;
+}
+
+.optionRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  min-height: 42px;
+}
+.layoutShell {
+  --justadmin-list-gutter: 24px;
+}
+
+@media (max-width: 575px) {
+  .layoutShell {
+    --justadmin-list-gutter: 16px;
+  }
+}
